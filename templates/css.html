@@ -1,0 +1,35 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap.min.css" %}">
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  /* Move down content because we have a fixed navbar that is 3.5rem tall */
+  body {
+    padding-top: 3.5rem;
+  }
+
+  .jumbotron img {
+    border-radius: 50%;
+  }
+
+  .photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .show-my-resume, .show-portfolio, .show-prices {
+    display: none;
+  }
+
+</style>

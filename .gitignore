@@ -1,0 +1,14 @@
+### settings ###
+/contact
+personal/settings/local.py
+personal/settings/base.py
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+.env
+db.sqlite3

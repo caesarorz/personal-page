@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Page Portfolio</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Custom styles for this template
+    <link href="jumbotron.css" rel="stylesheet"> -->
+  </head>
+  <body>
+<div class="container">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contac Me!</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <img class="photo" src="{{ jumbotron.first.image.url }}" alt="">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-9">
+          <h1 class="display-3">{{ jumbotron.first.header_one }}</h1>
+          <p>{{ jumbotron.first.paragraph }}</p>
+          {# <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> #}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+
+      {% for head in heading %}
+      <div class="col-md-4">
+        <h2>{{ head.heading }}</h2>
+        <p>{{ head.title_description }}</p>
+        <button id="{{ head.get_id }}" type="button" class="btn btn-info">View Details</button>
+        <div class="show-{{ head.get_id }} ">
+          <p>Please choose your favorite language.</p>
+          <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-info">Español</button>
+            <button type="button" class="btn btn-secondary">-</button>
+            <button type="button" class="btn btn-success">English</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <hr>
+  </div> <!-- /container -->
+</main>
+
+
+
+{% endblock %}

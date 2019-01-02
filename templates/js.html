@@ -1,0 +1,38 @@
+{% load static %}
+
+<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+{# <script src="{% static "js/popper.min.js" %}"></script> #}
+
+<script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
+
+
+<script type="text/javascript">
+
+// Jquery code
+$(document).ready(function(){
+
+  $("#my-resume").click(function(){
+    // $( "<p>Test</p>" ).insertAfter( "#my-resume" );
+    $(".show-my-resume").toggle(1000, function(){
+      if ($(".show-my-resume").is(':visible')) {
+        $("html, body").animate({scrollTop: $("#my-resume").offset().top});
+      }
+
+    });
+  });
+
+
+  $("#portfolio").click(function(){
+    // $( "<p>Test</p>" ).insertAfter( "#my-resume" );
+    $(".show-portfolio").toggle(1000, function(){
+      if ($(".show-portfolio").is(':visible')) {
+        $("html, body").animate({scrollTop: $("#portfolio").offset().top});
+      }
+    });
+  });
+
+});
+
+</script>
