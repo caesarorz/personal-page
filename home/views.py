@@ -9,7 +9,7 @@ class HomeView(CreateView):
     # queryset = Jumbotron.objects.all()
     fields = '__all__'
     model = Jumbotron
-    template_name = 'home/home.html'
+    template_name = 'home.html'
 
     def get_context_data(self, *args, **kwargs):
         context = super(HomeView, self).get_context_data(*args, **kwargs)
